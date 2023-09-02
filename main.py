@@ -1,10 +1,9 @@
-# Import tkinter module
-# Import csv module
 import csv
 import tkinter as tk
 from tkinter import ttk
 
 CAR_STATUS_INDEX = 3
+
 
 def users():
     rows = []
@@ -34,8 +33,10 @@ def cars():
 
     return rows
 
+
 def rentedCars():
     return filter(getRentedCars, cars())
+
 
 def getRentedCars(carRow):
     carStatus = carRow[CAR_STATUS_INDEX]
@@ -44,6 +45,7 @@ def getRentedCars(carRow):
         return True
     else:
         return False
+
 
 def rentedCarsCount():
     return len(list(rentedCars()))
@@ -57,11 +59,15 @@ def main():
     root.geometry("750x750")
 
     # App Title
-    tk.Label(text="Car Rental Admin Dashboard", height=2, width=30, font=("Courier", 25)).pack()
+    tk.Label(text="Car Rental Admin Dashboard",
+             height=2,
+             width=30,
+             font=("Courier", 25)).pack()
 
     # Rented Cars Section
     tk.Label(text="Rented Cars").pack()
-    tk.Label(text="{rentedCarsCount}".format(rentedCarsCount=rentedCarsCount())).pack()
+    tk.Label(text="{rentedCarsCount}".format(
+        rentedCarsCount=rentedCarsCount())).pack()
 
     # Run app
     root.mainloop()

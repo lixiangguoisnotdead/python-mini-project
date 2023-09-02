@@ -1,2 +1,4 @@
-Id,Model,Type
-1,Accord,Sedan
+Id,Model,Type,Status
+1,Accord,Sedan,Rented
+2,Prius,Sedan,Available
+3,Optima,Sedan,Rented
